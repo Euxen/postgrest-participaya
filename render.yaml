@@ -1,21 +1,19 @@
 services:
   - type: web
-    plan: free
     name: postgrest
+    plan: free
     env: docker
-    autoDeploy: true   # automatically redeploy on push
+    autoDeploy: true  # automatically redeploy on push
     envVars:
       - key: PGRST_DB_URI
-        fromDatabase:
-          name: scraper_db_6t74   # <-- make sure this matches your actual Render DB
-          property: connectionString
+        value: postgresql://scraper_db_6t74_user:YvckzIPxUMZwaN6gwJGZB83ju3XCoFao@dpg-cul385d6l47c73eg5gfg-a/scraper_db_6t74
       - key: PGRST_DB_SCHEMA
         value: public
       - key: PGRST_DB_ANON_ROLE
         value: participaya_user
 
 databases:
-  - name: scraper_db_6t74   # <-- match your actual DB
+  - name: scraper_db_6t74
     plan: free
     ipAllowList:
       - source: 0.0.0.0/0

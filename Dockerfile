@@ -1,6 +1,6 @@
-FROM postgrest/postgrest:latest
+FROM postgrest/postgrest:latest-alpine
 
-# Skip user creation - use default container user
+# Alpine version doesn't have the user ID lookup issues
 # Expose the port
 EXPOSE 3000
 

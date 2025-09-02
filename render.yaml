@@ -6,15 +6,11 @@ services:
     autoDeploy: false
     envVars:
       - key: PGRST_DB_URI
-        fromDatabase:
-          name: postgrest-db
-          property: connectionString
+        value: postgresql://scraper_db_6t74_user:YvckzIPxUMZwaN6gwJGZB83ju3XCoFao@dpg-cul385d6l47c73eg5gfg-a:5432/scraper_db_6t74
       - key: PGRST_DB_SCHEMA
         value: public
       - key: PGRST_DB_ANON_ROLE
-        fromDatabase:
-          name: postgrest-db
-          property: user
+        value: anon
 
 databases:
   - name: postgrest-db

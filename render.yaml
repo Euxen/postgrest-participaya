@@ -3,7 +3,7 @@ services:
     name: postgrest
     plan: free
     env: docker
-    autoDeploy: true  # automatically redeploy on push
+    autoDeploy: true
     envVars:
       - key: PGRST_DB_URI
         value: postgresql://scraper_db_6t74_user:YvckzIPxUMZwaN6gwJGZB83ju3XCoFao@dpg-cul385d6l47c73eg5gfg-a/scraper_db_6t74

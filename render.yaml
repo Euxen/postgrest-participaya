@@ -6,14 +6,13 @@ services:
     repo: https://github.com/Euxen/postgrest-participaya
     autoDeploy: true
     envVars:
+      # Dummy connection string just to satisfy PostgREST startup
       - key: PGRST_DB_URI
-        value: postgresql://scraper_db_6t74_user:YvckzIPxUMZwaN6gwJGZB83ju3XCoFao@dpg-cul385d6l47c73eg5gfg-a/scraper_db_6t74
+        value: postgresql://dummy:dummy@localhost:5432/dummy
       - key: PGRST_DB_SCHEMA
         value: public
       - key: PGRST_DB_ANON_ROLE
-        value: scraper_db_6t74_user
-      - key: PGRST_DB_CHANNEL_ENABLED
-        value: "false"
+        value: dummy
 
 databases:
   - name: scraper_db_6t74

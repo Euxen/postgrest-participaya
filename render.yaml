@@ -3,6 +3,7 @@ services:
     name: postgrest
     plan: free
     env: docker
+    repo: https://github.com/Euxen/postgrest-participaya
     autoDeploy: true
     envVars:
       - key: PGRST_DB_URI

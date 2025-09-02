@@ -6,13 +6,18 @@ services:
     repo: https://github.com/Euxen/postgrest-participaya
     autoDeploy: true
     envVars:
-      # Dummy connection string just to satisfy PostgREST startup
+      # Use Render's native database reference instead of hardcoded string
       - key: PGRST_DB_URI
-        value: postgresql://dummy:dummy@localhost:5432/dummy
+        fromDatabase:
+          name: scraper_db_6t74
+          property: connectionString
       - key: PGRST_DB_SCHEMA
         value: public
       - key: PGRST_DB_ANON_ROLE
-        value: dummy
+        value: scraper_db_6t74_user
+      # Disable database notifications to avoid user lookup issues
+      - key: PGRST_DB_CHANNEL_ENABLED
+        value: "false"
 
 databases:
   - name: scraper_db_6t74

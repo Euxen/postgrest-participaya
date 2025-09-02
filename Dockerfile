@@ -1,6 +1,8 @@
-FROM postgrest/postgrest:latest-alpine
+FROM postgrest/postgrest:latest
 
-# Alpine version doesn't have the user ID lookup issues
+# Run as root to avoid user lookup issues
+USER root
+
 # Expose the port
 EXPOSE 3000
 

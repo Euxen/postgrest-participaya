@@ -17,11 +17,14 @@ services:
         value: 0.0.0.0
       - key: PGRST_SERVER_PORT
         value: 3000
-      # Add these additional settings to help with connection issues
+      # Add these to bypass user lookup issues
       - key: PGRST_DB_POOL
         value: "10"
       - key: PGRST_DB_POOL_ACQUISITION_TIMEOUT
         value: "10"
+      # Force disable database notifications to avoid user lookup
+      - key: PGRST_DB_CHANNEL_ENABLED
+        value: "false"
 
 databases:
   - name: scraper_db_6t74

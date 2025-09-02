@@ -6,11 +6,13 @@ services:
     autoDeploy: true
     envVars:
       - key: PGRST_DB_URI
-        value: postgres://scraper_db_6t74_user:YvckzIPxUMZwaN6gwJGZB83ju3XCoFao@dpg-cul385d6l47c73eg5gfg-a.oregon-postgres.render.com:5432/scraper_db_6t74?sslmode=require
+        value: postgresql://scraper_db_6t74_user:YvckzIPxUMZwaN6gwJGZB83ju3XCoFao@dpg-cul385d6l47c73eg5gfg-a.oregon-postgres.render.com:5432/scraper_db_6t74?sslmode=require
       - key: PGRST_DB_SCHEMA
         value: public
       - key: PGRST_DB_ANON_ROLE
         value: scraper_db_6t74_user
+      - key: PGRST_SERVER_HOST
+        value: 0.0.0.0
       - key: PGRST_SERVER_PORT
         value: 3000
 

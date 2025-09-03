@@ -9,7 +9,7 @@ services:
       - key: PGRST_DB_URI
         fromDatabase:
           name: scraper_db_6t74
-          property: connectionString  # This was the key fix!
+          property: connectionString
       - key: PGRST_DB_SCHEMA
         value: public
       - key: PGRST_DB_ANON_ROLE
@@ -18,12 +18,10 @@ services:
         value: "3000"
       - key: PGRST_DB_CHANNEL_ENABLED
         value: "false"
-      - key: PGRST_SERVER_CORS_ALLOWED_ORIGINS
-        value: "*"
 
 databases:
   - name: scraper_db_6t74
-    plan: free
+    plan: starter  # Use "starter" for the $7/month Basic plan
     ipAllowList:
       - source: 0.0.0.0/0
         description: from anywhere

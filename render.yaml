@@ -9,7 +9,7 @@ services:
       - key: PGRST_DB_URI
         fromDatabase:
           name: scraper_db_6t74
-          property: postgresql://scraper_db_6t74_user:YvckzIPxUMZwaN6gwJGZB83ju3XCoFao@dpg-cul385d6l47c73eg5gfg-a/scraper_db_6t74
+          property: connectionString  # This was the key fix!
       - key: PGRST_DB_SCHEMA
         value: public
       - key: PGRST_DB_ANON_ROLE
@@ -18,7 +18,6 @@ services:
         value: "3000"
       - key: PGRST_DB_CHANNEL_ENABLED
         value: "false"
-      # Optional: Add CORS if you need it
       - key: PGRST_SERVER_CORS_ALLOWED_ORIGINS
         value: "*"
 

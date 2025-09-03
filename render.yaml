@@ -6,7 +6,6 @@ services:
     repo: https://github.com/Euxen/postgrest-participaya
     autoDeploy: true
     envVars:
-      # Use Render's native database reference instead of hardcoded string
       - key: PGRST_DB_URI
         fromDatabase:
           name: scraper_db_6t74
@@ -14,10 +13,14 @@ services:
       - key: PGRST_DB_SCHEMA
         value: public
       - key: PGRST_DB_ANON_ROLE
-        value: scraper_db_6t74_user
-      # Disable database notifications to avoid user lookup issues
+        value: web_anon
+      - key: PGRST_SERVER_PORT
+        value: "3000"
       - key: PGRST_DB_CHANNEL_ENABLED
         value: "false"
+      # Optional: Add CORS if you need it
+      - key: PGRST_SERVER_CORS_ALLOWED_ORIGINS
+        value: "*"
 
 databases:
   - name: scraper_db_6t74
